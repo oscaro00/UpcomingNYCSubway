@@ -58,7 +58,7 @@
             }
 
             .last-updated {
-                color: #777;
+                color: #999 !important;
             }
         }
         
@@ -80,6 +80,13 @@
             padding: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: center;
+            min-height: 300px;
+        }
+
+        .subway-component > div:last-child {
+            display: flex;
+            flex-direction: column;
+            min-height: 240px;
         }
         
         .line-badge {
@@ -189,7 +196,8 @@
         .last-updated {
             font-size: 11px;
             color: #aaa;
-            margin-top: 10px;
+            margin-top: auto;
+            padding-top: 10px;
         }
     </style>
 </head>

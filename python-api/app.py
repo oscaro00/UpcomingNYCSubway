@@ -57,8 +57,11 @@ async def subway_component(line_id: str):
                 <i class="fa-solid fa-person-walking"></i>
                 {walk_time} min walk
             </div>
+            <div class="last-updated">
+                Updated: {datetime.now().strftime("%H:%M:%S")}
+            </div>
         </div>
-        
+
         <div class="arrivals">
             <div class="arrivals-title">Upcoming Trains</div>
             <div class="directions-container">
@@ -85,13 +88,7 @@ async def subway_component(line_id: str):
         html += '</div>'
 
         html += '</div>'  # Close directions-container
-        
-        html += f'''
-            <div class="last-updated">
-                Updated: {datetime.now().strftime("%H:%M:%S")}
-            </div>
-        </div>
-        '''
+        html += '</div>'  # Close arrivals
         
         return html
         
