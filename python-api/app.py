@@ -44,8 +44,8 @@ async def subway_component(line_id: str):
         train_data = get_upcoming_trains(line_id)
         
         line_data = train_data.get(line_id, {})
-        northbound = line_data.get("N", [])
-        southbound = line_data.get("S", [])
+        northbound = sorted(line_data.get("N", []))
+        southbound = sorted(line_data.get("S", []))
         
         html = f'''
         <div class="stop-info">
@@ -61,27 +61,30 @@ async def subway_component(line_id: str):
         
         <div class="arrivals">
             <div class="arrivals-title">Upcoming Trains</div>
+            <div class="directions-container">
         '''
-        
+
         # Northbound trains
+        html += '<div class="direction-section">'
+        html += '<div class="direction-label">Northbound</div>'
         if northbound:
-            html += '<div class="direction-section">'
-            html += '<div class="direction-label">Northbound</div>'
             for time in northbound:
                 html += f'<div class="arrival-time">{time} min</div>'
-            html += '</div>'
-        
+        else:
+            html += '<div class="no-trains">No trains</div>'
+        html += '</div>'
+
         # Southbound trains
+        html += '<div class="direction-section">'
+        html += '<div class="direction-label">Southbound</div>'
         if southbound:
-            html += '<div class="direction-section">'
-            html += '<div class="direction-label">Southbound</div>'
             for time in southbound:
                 html += f'<div class="arrival-time">{time} min</div>'
-            html += '</div>'
-        
-        # If no trains
-        if not northbound and not southbound:
-            html += '<div class="no-trains">No upcoming trains</div>'
+        else:
+            html += '<div class="no-trains">No trains</div>'
+        html += '</div>'
+
+        html += '</div>'  # Close directions-container
         
         html += f'''
             <div class="last-updated">
