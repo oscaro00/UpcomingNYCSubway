@@ -6,6 +6,22 @@
     <title>NYC Subway Tracker</title>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Check time and apply theme
+        function applyTimeBasedTheme() {
+            const hour = new Date().getHours();
+            // Dark mode from 6 PM (18) to 6 AM (6)
+            if (hour >= 18 || hour < 6) {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+        }
+
+        // Apply theme on load and every minute
+        document.addEventListener('DOMContentLoaded', applyTimeBasedTheme);
+        setInterval(applyTimeBasedTheme, 60000);
+    </script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
@@ -16,50 +32,50 @@
             color: #333;
         }
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #1a1a1a;
-                color: #e0e0e0;
-            }
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
 
-            .subway-component {
-                background: #2d2d2d !important;
-                color: #e0e0e0;
-                box-shadow: 0 2px 8px rgba(255,255,255,0.1);
-            }
+        body.dark-theme .subway-component {
+            background: #2d2d2d !important;
+            color: #e0e0e0;
+            box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+        }
 
-            h1 {
-                color: #e0e0e0;
-            }
+        body.dark-theme h1 {
+            color: #e0e0e0;
+        }
 
-            .stop-name, .direction-label {
-                color: #ffffff !important;
-            }
+        body.dark-theme .stop-name,
+        body.dark-theme .direction-label {
+            color: #ffffff !important;
+        }
 
-            .stop-info, .walk-time {
-                color: #b0b0b0;
-            }
+        body.dark-theme .stop-info,
+        body.dark-theme .walk-time {
+            color: #b0b0b0;
+        }
 
-            .arrival-time {
-                background-color: #3a3a3a !important;
-                color: #ffffff !important;
-            }
+        body.dark-theme .arrival-time {
+            background-color: #3a3a3a !important;
+            color: #ffffff !important;
+        }
 
-            .arrivals {
-                border-top: 2px solid #444;
-            }
+        body.dark-theme .arrivals {
+            border-top: 2px solid #444;
+        }
 
-            .arrivals-title {
-                color: #aaa;
-            }
+        body.dark-theme .arrivals-title {
+            color: #aaa;
+        }
 
-            .no-trains {
-                color: #888;
-            }
+        body.dark-theme .no-trains {
+            color: #888;
+        }
 
-            .last-updated {
-                color: #999 !important;
-            }
+        body.dark-theme .last-updated {
+            color: #999 !important;
         }
         
         h1 {
