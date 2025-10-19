@@ -10,7 +10,7 @@ echo "Docker daemon is ready"
 
 docker compose up -d
 
-sleep 5
+sleep 10
 
 # Open browser
-chromium --kiosk http://localhost:8000 &
+DISPLAY=:0 chromium --kiosk http://localhost:8000 &
