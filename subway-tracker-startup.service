@@ -1,15 +1,18 @@
 [Unit]
 Description=Start NYC Subway Tracker
-After=docker.service network-online.target graphical.target
-Requires=docker.service network-online.target
+After=docker.service graphical.target network-online.target
+Requires=docker.service
+Wants=network-online.target
 
 [Service]
-Type=forking
+Type=simple
 User=subwaytracker
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=/home/subwaytracker/.Xauthority
-ExecStart=/usr/subwaytracker/UpcomingNYCSubway/startup-subway-tracker.sh
+WorkingDirectory=/home/subwaytracker/UpcomingNYCSubway
+ExecStart=/bin/bash /home/subwaytracker/UpcomingNYCSubway/startup-subway-tracker.sh
 Restart=on-failure
+RestartSec=10
 
 [Install]
 WantedBy=graphical.target
