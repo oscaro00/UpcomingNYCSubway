@@ -1,8 +1,7 @@
-from typing import Union, Dict, Tuple
+from typing import Dict, Tuple
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from datetime import datetime
 
 from .subway import is_valid_line_id, get_subway_stop_info, get_upcoming_subway_trains
