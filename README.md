@@ -34,8 +34,8 @@ The easiest way to run this application is using Docker, especially for deployme
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd SubwayTracker
+   git clone https://github.com/oscaro00/UpcomingNYCSubway.git
+   cd UpcomingNYCSubway
    ```
 
 2. Build and run the container:
@@ -55,6 +55,9 @@ docker compose up -d
 docker compose logs -f subway-tracker
 
 # Stop the container
+docker compose stop
+
+# Stop the container and remove it
 docker compose down
 
 # Update and restart (after code changes)

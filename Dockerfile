@@ -1,4 +1,4 @@
-FROM ghcr.io/astral-sh/uv:python3.13-slim
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim
 
 # Set working directory
 WORKDIR /app
@@ -13,11 +13,8 @@ RUN uv sync --frozen --no-cache
 COPY python-api/ ./python-api/
 COPY htmx/ ./htmx/
 
-# Set working directory to python-api for the server
-WORKDIR /app/python-api
-
 # Expose port
 EXPOSE 8000
 
 # Run the application
-CMD ["uv", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uv", "run", "uvicorn", "python-api.app:app", "--host", "0.0.0.0", "--port", "8000"]

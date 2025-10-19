@@ -2,8 +2,6 @@ from nyct_gtfs import NYCTFeed
 from datetime import datetime
 from typing import Dict, List, Tuple
 
-from nearby_stops import relevant_stops
-
 
 def get_nyc_subway_data(line_id: str, relevant_stops: Dict) -> Dict:
     stop_id = None

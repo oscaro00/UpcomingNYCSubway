@@ -5,8 +5,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime
 
-from subway import is_valid_line_id, get_subway_stop_info, get_upcoming_subway_trains
-from nearby_stops import relevant_stops
+from .subway import is_valid_line_id, get_subway_stop_info, get_upcoming_subway_trains
+from .nearby_stops import relevant_stops
 
 app = FastAPI()
 
