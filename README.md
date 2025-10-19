@@ -14,6 +14,14 @@ relevant_stops = {
 
 See `python-api/stops.csv` for the stop ids. Walking time is specific to a NYC location and is assumed to be in minutes.
 
+## Local Testing
+
+```bash
+fastapi dev python-api/app.py
+```
+
+Then visit `http://127.0.0.1:8000/` to see the web page. `http://127.0.0.1:8000/docs` will show the FastAPI docs.
+
 ## Running with Docker (Recommended)
 
 The easiest way to run this application is using Docker, especially for deployment on devices like Raspberry Pi.
