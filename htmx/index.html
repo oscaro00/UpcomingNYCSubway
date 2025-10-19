@@ -219,108 +219,11 @@
 </head>
 <body>
 
-    <div class="subway-grid">
-        <!-- Component for Line 1 -->
-        <div class="subway-component">
-            <div class="line-badge line-1">1</div>
-            <div hx-get="/subway_component/1"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-        
-        <!-- Component for Line C -->
-        <div class="subway-component">
-            <div class="line-badge line-C">A</div>
-            <div hx-get="/subway_component/C"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-        
-        <!-- Component for Line E -->
-        <div class="subway-component">
-            <div class="line-badge line-E">E</div>
-            <div hx-get="/subway_component/E"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-
-        <!-- Component for Line B -->
-        <div class="subway-component">
-            <div class="line-badge line-B">B</div>
-            <div hx-get="/subway_component/B"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-
-        <!-- Component for Line D -->
-        <div class="subway-component">
-            <div class="line-badge line-D">D</div>
-            <div hx-get="/subway_component/D"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-
-        <!-- Component for Line F -->
-        <div class="subway-component">
-            <div class="line-badge line-F">F</div>
-            <div hx-get="/subway_component/F"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-
-        <!-- Component for Line M -->
-        <div class="subway-component">
-            <div class="line-badge line-M">M</div>
-            <div hx-get="/subway_component/M"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-
-        <!-- Component for Line Q -->
-        <div class="subway-component">
-            <div class="line-badge line-Q">Q</div>
-            <div hx-get="/subway_component/Q"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-
-        <!-- Component for Line R -->
-        <div class="subway-component">
-            <div class="line-badge line-R">R</div>
-            <div hx-get="/subway_component/R"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-
-        <!-- Component for Line W -->
-        <div class="subway-component">
-            <div class="line-badge line-W">W</div>
-            <div hx-get="/subway_component/W"
-                 hx-trigger="load, every 60s"
-                 hx-swap="innerHTML">
-                <div class="loading">Loading...</div>
-            </div>
-        </div>
-        
-        <!-- Add more lines as needed -->
+    <div class="subway-grid"
+         hx-get="/all_subway_components"
+         hx-trigger="load, every 60s"
+         hx-swap="innerHTML">
+        <div class="loading">Loading all components...</div>
     </div>
 </body>
 </html>

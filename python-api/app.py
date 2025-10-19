@@ -96,6 +96,33 @@ async def subway_component(line_id: str):
         return f'<div class="error">Error loading data: {str(e)}</div>'
 
 
+@app.get("/all_subway_components", response_class=HTMLResponse)
+async def all_subway_components():
+    """Return HTML for all subway components at once"""
+    line_ids = ['1', 'C', 'E', 'B', 'D', 'F', 'M', 'Q', 'R', 'W']
+
+    html_parts = []
+    for line_id in line_ids:
+        try:
+            if is_valid_line_id(line_id, relevant_stops):
+                content_html = await subway_component(line_id)
+                # Get the line badge letter (handle special cases)
+                badge_letter = 'A' if line_id == 'C' else line_id
+
+                component_html = f'''
+                <div class="subway-component">
+                    <div class="line-badge line-{line_id}">{badge_letter}</div>
+                    {content_html}
+                </div>
+                '''
+                html_parts.append(component_html)
+            else:
+                html_parts.append(f'<div class="subway-component"><div class="error">Invalid line: {line_id}</div></div>')
+        except Exception as e:
+            html_parts.append(f'<div class="subway-component"><div class="error">Error loading {line_id}: {str(e)}</div></div>')
+
+    return '\n'.join(html_parts)
+
 @app.get("/")
 async def read_root():
     return FileResponse("htmx/index.html")
