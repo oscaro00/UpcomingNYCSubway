@@ -107,7 +107,7 @@ async def all_subway_components():
             if is_valid_line_id(line_id, relevant_stops):
                 content_html = await subway_component(line_id)
                 # Get the line badge letter (handle special cases)
-                badge_letter = 'A' if line_id == 'C' else line_id
+                badge_letter = line_id
 
                 component_html = f'''
                 <div class="subway-component">
