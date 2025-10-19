@@ -13,4 +13,4 @@ docker compose up -d
 sleep 5
 
 # Open browser
-chromium-browser --kiosk http://localhost:8000 &
+chromium --kiosk http://localhost:8000 &
