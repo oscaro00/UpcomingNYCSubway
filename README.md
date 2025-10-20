@@ -94,6 +94,7 @@ To automatically start the application on boot (e.g., on a Raspberry Pi):
    - Chromium browser is installed: `sudo apt-get install chromium-browser`
    - You have a graphical environment running (desktop)
    - The `XAUTHORITY` path in the service file matches your user's home directory
+   - Once in kiosk mode, `alt + space` allows mouse control
 
 ### Docker Commands
 
