@@ -13,4 +13,4 @@ docker compose up -d
 sleep 10
 
 # Open browser
-DISPLAY=:0 chromium --kiosk http://localhost:8000 &
+DISPLAY=:0 chromium --kiosk --no-first-run --enable-features=OverlayScrollbar --start-maximized http://localhost:8000
