@@ -87,17 +87,20 @@
         
         .subway-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(5, 194px);
             gap: 8px;
             margin-top: 10px;
+            justify-content: center;
         }
-        
+
         .subway-component {
             background: white;
             border-radius: 8px;
             padding: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: center;
+            width: 194px;
+            box-sizing: border-box;
         }
         
         .line-badge {
