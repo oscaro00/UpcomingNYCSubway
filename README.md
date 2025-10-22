@@ -113,6 +113,7 @@ docker compose down
 
 # Update and restart (after code changes)
 docker compose up -d --build
+# styling changes my require the browser cache to be cleared before changes appear
 
 # Check container status
 docker compose ps
