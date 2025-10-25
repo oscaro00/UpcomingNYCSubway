@@ -68,7 +68,7 @@ async def subway_component(line_id: str):
 
         # Northbound trains
         html += '<div class="direction-section">'
-        html += '<div class="direction-label">Northbound</div>'
+        html += '<div class="direction-label">North</div>'
         if northbound:
             for time in northbound:
                 html += f'<div class="arrival-time">{time} min</div>'
@@ -78,7 +78,7 @@ async def subway_component(line_id: str):
 
         # Southbound trains
         html += '<div class="direction-section">'
-        html += '<div class="direction-label">Southbound</div>'
+        html += '<div class="direction-label">South</div>'
         if southbound:
             for time in southbound:
                 html += f'<div class="arrival-time">{time} min</div>'
